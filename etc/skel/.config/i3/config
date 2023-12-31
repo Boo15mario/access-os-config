@@ -27,10 +27,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec picom &
 #start nitrogen
 exec nitrogen --restore
-#Play greeting on login (change as you see fit)
-#This greeting will be played instead of orca saying screen reader on.
-#Comment it out to disable it.
-exec echo "Welcome to Access OS! Screen reader on." | spd-say -e
 #Orca screenreader reads out the screen
 exec orca -r
 #Start clipster
