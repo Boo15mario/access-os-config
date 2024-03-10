@@ -1,0 +1,11 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+export ACCESSIBILITY_ENABLED=1
+export GTK_MODULES=gail:atk-bridge
+export GNOME_ACCESSIBILITY=1
+export QT_ACCESSIBILITY=1
+export QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+
