@@ -39,7 +39,8 @@ exec xscreensaver -nosplash &
 exec access-system --play-greeting "Welcome to Access OS."
 #start notification logger
 exec ~/.access-os/scripts/keep_log.sh
-
+# Automatically mount connected drives using udiskie
+exec udiskie -a
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
