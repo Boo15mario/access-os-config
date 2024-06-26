@@ -47,7 +47,7 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-# Use pactl to adjust volume in PulseAudio.
+# Adjust volume using access-system handler
 set $refresh_i3status killall -SIGUSR1 i3status
 #Raise volume
 bindsym mod4+F10 exec access-system --vol-up && $refresh_i3status
@@ -67,6 +67,12 @@ bindsym mod4+F2 exec access-system --mic-down && $refresh_i3status
 #Enable this if you wish by uncommenting the lines below.
 #bindsym mod4+F1 exec access-system --mic-mute-toggle && $refresh_i3status
 #bindsym XF86AudioMicMute exec access-system --mic-mute-toggle && $refresh_i3status
+#Increase screen brightness
+bindsym XF86MonBrightnessUp exec access-system --brightness-up
+bindsym mod4+F6 exec access-system --brightness-up
+#Decrease screen brightness
+bindsym XF86MonBrightnessDown exec access-system --brightness-down
+bindsym mod4+F5 exec access-system --brightness-down
 # Start notification daemon
 exec /usr/lib/notification-daemon-1.0/notification-daemon
 # Set default workspace layout
