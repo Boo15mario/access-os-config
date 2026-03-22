@@ -267,8 +267,12 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// Access OS Niri startup services.
+spawn-at-startup "waynotify"
+spawn-at-startup "wayclip-daemon"
+spawn-at-startup "waytray-daemon"
+spawn-at-startup "soundthemed"
+spawn-at-startup "niri-sounds"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -372,10 +376,14 @@ binds {
 
 
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    // Access OS launcher and utility binds.
     Mod+T hotkey-overlay-title="Open a Terminal: lxterminal" { spawn "lxterminal"; }
-    Mod+D hotkey-overlay-title="Run an Application: xfce4-appfinder" { spawn "xfce4-appfinder"; }
-    Alt+F2 hotkey-overlay-title="Run an Application: gmrun" { spawn "gmrun"; }    
+    Mod+D hotkey-overlay-title="Open the Access Launcher" { spawn "access-launcher"; }
+    Alt+F2 hotkey-overlay-title="Run an Application: gmrun" { spawn "gmrun"; }
+    Mod+B hotkey-overlay-title="Open Clipboard History: wayclip" { spawn "wayclip"; }
+    Mod+A hotkey-overlay-title="Open Volume Mixer: wayvol" { spawn "wayvol"; }
+    Mod+Y hotkey-overlay-title="Open Tray Window: waytray" { spawn "waytray"; }
+    Mod+X hotkey-overlay-title="Choose Default Apps: xdg-chooser" { spawn "xdg-chooser"; }
 //    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -396,6 +404,8 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    Mod+Shift+BracketRight hotkey-overlay-title="Increase Brightness" { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    Mod+Shift+BracketLeft hotkey-overlay-title="Decrease Brightness" { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
