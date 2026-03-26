@@ -1,0 +1,17 @@
+# greetd configuration for Access OS Niri profile
+# Uses waygreet as the greeter for accessibility-first login
+
+[terminal]
+vt = 1
+
+[default_session]
+# waygreet runs inside cage, wrapped in dbus-run-session for proper
+# D-Bus portal/AT-SPI initialization (required for Orca screen reader)
+command = "dbus-run-session cage -s -- waygreet"
+user = "greetd"
+
+[initial_session]
+# For live ISO autologin to the live user session.
+# The live service handles user selection and session start.
+command = "sleep infinity"
+user = "root"

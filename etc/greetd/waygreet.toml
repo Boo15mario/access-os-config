@@ -1,0 +1,18 @@
+# waygreet configuration for Access OS Niri profile
+# Accessibility-first greeter for greetd
+
+[accessibility]
+# Start Orca screen reader automatically when waygreet loads.
+# Orca is started as a subprocess of waygreet so it inherits the
+# correct WAYLAND_DISPLAY and AT-SPI bus environment variables.
+start_orca = true
+
+# Enable PipeWire audio services via systemd user session.
+enable_audio = true
+
+[appearance]
+# High contrast mode for better visibility.
+high_contrast = false
+
+# Font scale factor (1.0 = default, 1.5 = 50% larger).
+font_scale = 1.0
